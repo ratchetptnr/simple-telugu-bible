@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Telugu Bible - Voice-Navigated Bible App</title>
+    <meta name="description" content="A Telugu Bible app designed for elderly users with AI voice navigation, large text, and simple interface.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            border-radius: 27px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section {
+            margin: 3rem 0;
+        }
+
+        .waitlist-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .waitlist-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            outline: none;
+        }
+
+        .waitlist-form input:focus {
+            border-color: #4F46E5;
+        }
+
+        .waitlist-form button {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: #4F46E5;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .waitlist-form button:hover {
+            background: #4338CA;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #FEF3C7;
+            color: #92400E;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            background: #F9FAFB;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .screenshots {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .screenshots h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .screenshot-grid img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .changelog-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .changelog-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .changelog-entry {
+            background: white;
+            border-left: 4px solid #4F46E5;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .changelog-entry .date {
+            color: #666;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .changelog-entry .version {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .changelog-entry ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .changelog-entry li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .changelog-entry li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4F46E5;
+            font-weight: bold;
+        }
+
+        .social-links {
+            text-align: center;
+            padding: 60px 24px;
+            background: #F9FAFB;
+        }
+
+        .social-links h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .social-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: #666;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.125rem;
+            }
+
+            .features h2,
+            .screenshots h2,
+            .changelog-section h2 {
+                font-size: 2rem;
+            }
+
+            .waitlist-form {
+                flex-direction: column;
+            }
+
+            .waitlist-form input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <img src="AppIcon.png" alt="Simple Telugu Bible App Icon" class="app-icon">
+        <div class="status-badge">🚧 Building in Public</div>
+        <h1>Simple Telugu Bible</h1>
+        <p class="tagline">A voice-navigated Bible app designed for elderly Telugu-speaking users. Simple, accessible, and thoughtful.</p>
+
+        <div class="cta-section">
+            <form class="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Join Waitlist</button>
+            </form>
+            <p style="margin-top: 1rem; color: #666; font-size: 0.875rem;">Get notified when the app launches on iOS and Android</p>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>Built for Real People</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎤 AI Voice Navigation</h3>
+                <p>Speak in Telugu, English, or mix both. Say "మత్తయి మూడు పన్నెండు" and the app navigates to Matthew 3:12. Powered by Gemini AI.</p>
+            </div>
+            <div class="feature-card">
+                <h3>👴 Elderly-Optimized</h3>
+                <p>Large text (14-28pt), adjustable line spacing, high contrast, and large touch targets. Designed specifically for grandmothers and elderly users.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📖 Auto-Save Position</h3>
+                <p>Pick up exactly where you left off. The app remembers your book, chapter, and verse.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Cross-Platform</h3>
+                <p>Native iOS (SwiftUI) and Android (Jetpack Compose) with identical features and design.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌐 Offline Support</h3>
+                <p>Full Telugu Bible text works offline. Voice navigation requires internet for AI processing.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Simple & Focused</h3>
+                <p>No ads, no clutter, no complicated menus. Just the Bible and an easy way to read it.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="screenshots">
+        <h2>App Preview</h2>
+        <div class="screenshot-grid">
+            <img src="IMG_0300.PNG" alt="Reading settings with adjustable font size and line spacing">
+            <img src="IMG_0301.PNG" alt="Appearance settings with light, dark, and automatic themes">
+            <img src="Simulator Screenshot - iPhone 17 - 2025-10-03 at 12.30.30.PNG" alt="Voice navigation interface">
+        </div>
+    </div>
+
+    <div class="changelog-section">
+        <h2>Development Progress</h2>
+        <div id="changelog">
+            <div class="changelog-entry">
+                <div class="date">October 3, 2025</div>
+                <div class="version">v0.1.0 - Initial Build</div>
+                <ul>
+                    <li>Complete Telugu Bible text (USFM format)</li>
+                    <li>AI voice navigation with Gemini integration</li>
+                    <li>Adaptive typography and reading settings</li>
+                    <li>Auto-save reading position</li>
+                    <li>Cross-platform: iOS and Android</li>
+                    <li>Dark mode support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-links">
+        <h2>Follow the Journey</h2>
+        <p>Building in public. Watch daily progress on social media.</p>
+        <div class="social-grid">
+            <a href="https://www.instagram.com/ratchetpotnuru/" target="_blank" class="social-link">
+                📸 Instagram
+            </a>
+            <a href="https://x.com/ratchet__tweets" target="_blank" class="social-link">
+                🐦 X (Twitter)
+            </a>
+            <a href="https://www.youtube.com/@ratchetpotnuru" target="_blank" class="social-link">
+                🎥 YouTube
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made in Visakhapatnam, Andhra Pradesh 🇮🇳</p>
+        <p style="margin-top: 0.5rem;">Built with ❤️ for Telugu-speaking grandmothers everywhere</p>
+    </footer>
+</body>
+</html>

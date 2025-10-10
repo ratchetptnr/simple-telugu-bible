@@ -111,6 +111,96 @@
         <p class="subtitle">Building in public. Every update, every improvement.</p>
 
         <div class="changelog-entry">
+            <div class="date">October 10, 2025</div>
+            <div class="version">v1.0 - Launch Preparation</div>
+
+            <h3>Build Variants</h3>
+            <ul>
+                <li>Created two product flavors: <strong>basic</strong> (v1.0) and <strong>full</strong> (v2.0 with voice nav)</li>
+                <li>Removed dev-only features (Room analytics, debug metrics, audio debugging)</li>
+                <li>Both flavors share same package ID for single Play Store listing</li>
+            </ul>
+
+            <h3>App Icon & Splash Screen</h3>
+            <ul>
+                <li>Adaptive icon with beige background (#F5E6D3) and transparent Bible foreground</li>
+                <li>Monochrome icon for Material You theming (Bible silhouette with cross cutout)</li>
+                <li>Android 12+ SplashScreen API with system-controlled background</li>
+                <li>Proper sizing: App icon (16dp padding), Splash icon (24dp padding)</li>
+            </ul>
+
+            <h3>Pre-Launch Tasks</h3>
+            <ul>
+                <li>Privacy Policy creation (required for INTERNET permission)</li>
+                <li>Store listing preparation (screenshots, descriptions, feature graphic)</li>
+                <li>About section implementation</li>
+                <li>Content rating and target audience selection</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
+            <div class="date">January 8, 2025</div>
+            <div class="version">Voice Navigation Improvements</div>
+
+            <h3>Critical Fix: Audio Quality</h3>
+            <ul>
+                <li>Increased sample rate from 16kHz to 44.1kHz (matching iOS)</li>
+                <li>Switched from VOICE_RECOGNITION to MIC audio source (raw input)</li>
+                <li>Target: Match iOS 60%+ success rate</li>
+            </ul>
+
+            <h3>TTS Pronunciation Fix</h3>
+            <ul>
+                <li>Added number-to-Telugu word conversion (1-99)</li>
+                <li>Fixed pronunciation: "3:16" now reads as "మూడు అధ్యాయం పదహారు వచనం"</li>
+                <li>Prevents TTS from reading numbers as "3 to 16"</li>
+            </ul>
+
+            <h3>UX Improvements</h3>
+            <ul>
+                <li>Stop TTS before starting new recording (prevents feedback loop)</li>
+                <li>Added audio recording preservation for debugging</li>
+                <li>Debug metrics screen with success rate tracking</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
+            <div class="date">October 8, 2025</div>
+            <div class="version">Voice Navigation - Edge Case Handling</div>
+
+            <h3>Core Validation & Defaults</h3>
+            <ul>
+                <li>Auto-defaults: "Genesis" → Genesis 1:1, "Matthew 5" → Matthew 5:1</li>
+                <li>Two-layer validation: Gemini AI + middleware against USFM files</li>
+                <li>Invalid reference handling with actual limits in Telugu</li>
+                <li>Intent detection (navigation vs unrelated questions)</li>
+            </ul>
+
+            <h3>Error Handling</h3>
+            <ul>
+                <li>Short audio (&lt;2 seconds) shows error without sending to Gemini</li>
+                <li>No internet detection with "Try Again" button</li>
+                <li>Noisy audio prompts Gemini to ask user to repeat clearly</li>
+                <li>Hardcoded Telugu error messages with chapter/verse counts</li>
+            </ul>
+
+            <h3>Conversation Context</h3>
+            <ul>
+                <li>Multi-turn conversations for extracting complete information</li>
+                <li>Context preserved until successful navigation</li>
+                <li>Ambiguous requests: "Peter" → AI asks "1 పేతురు లేదా 2 పేతురు?"</li>
+            </ul>
+
+            <h3>Development Analytics (DEV ONLY)</h3>
+            <ul>
+                <li>Local Room database for tracking navigation metrics</li>
+                <li>Debug metrics screen with success rate, latency, error breakdown</li>
+                <li>Audio file preservation with timestamped filenames</li>
+                <li>Pull script for extracting recordings from device</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
             <div class="date">October 3, 2025</div>
             <div class="version">v0.1.0 - Initial Build</div>
 

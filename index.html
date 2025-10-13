@@ -18,6 +18,99 @@
             line-height: 1.6;
             color: #1a1a1a;
             background: #ffffff;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background: #1a1a1a;
+            color: #e5e5e5;
+        }
+
+        body.dark-mode .feature-card,
+        body.dark-mode .changelog-entry {
+            background: #2a2a2a;
+            border-color: #404040;
+        }
+
+        body.dark-mode .tab-label {
+            background: #2a2a2a;
+            border-color: #404040;
+            color: #999;
+        }
+
+        body.dark-mode #ios-tab:checked ~ .tab-navigation label[for="ios-tab"],
+        body.dark-mode #android-tab:checked ~ .tab-navigation label[for="android-tab"] {
+            color: #818CF8;
+            border-color: #818CF8;
+            background: #1e1b4b;
+        }
+
+        body.dark-mode .tab-label:hover {
+            border-color: #555;
+            background: #333;
+        }
+
+        body.dark-mode .waitlist-form input {
+            background: #2a2a2a;
+            border-color: #404040;
+            color: #e5e5e5;
+        }
+
+        body.dark-mode .waitlist-form input:focus {
+            border-color: #818CF8;
+        }
+
+        body.dark-mode .waitlist-form button {
+            background: #818CF8;
+        }
+
+        body.dark-mode .waitlist-form button:hover {
+            background: #6366F1;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border: 2px solid #e5e5e5;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            z-index: 1000;
+            color: #1a1a1a;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #2a2a2a;
+            border-color: #404040;
+            color: #e5e5e5;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .theme-toggle .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle .moon-icon {
+            display: block;
+        }
+
+        body.dark-mode .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        body.dark-mode .theme-toggle .moon-icon {
+            display: none;
         }
 
         .hero {
@@ -32,7 +125,6 @@
             height: 120px;
             margin: 0 auto 2rem;
             border-radius: 27px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             display: block;
         }
 
@@ -128,7 +220,7 @@
             background: white;
             padding: 2rem;
             border-radius: 16px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #e5e5e5;
         }
 
         .feature-card h3 {
@@ -151,6 +243,55 @@
         .screenshots h2 {
             font-size: 2.5rem;
             margin-bottom: 3rem;
+        }
+
+        .tab-container {
+            position: relative;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tab-input {
+            display: none;
+        }
+
+        .tab-label {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        #ios-tab:checked ~ .tab-navigation label[for="ios-tab"],
+        #android-tab:checked ~ .tab-navigation label[for="android-tab"] {
+            color: #4F46E5;
+            border-color: #4F46E5;
+            background: #f8f9ff;
+        }
+
+        .tab-label:hover {
+            border-color: #ccc;
+            background: #f9f9f9;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        #ios-tab:checked ~ #ios,
+        #android-tab:checked ~ #android {
+            display: block;
         }
 
         .screenshot-grid {
@@ -288,17 +429,18 @@
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <i class="ph ph-sun sun-icon"></i>
+        <i class="ph ph-moon moon-icon"></i>
+    </button>
+
     <div class="hero">
         <img src="AppIcon.png" alt="Simple Telugu Bible App Icon" class="app-icon">
         <div class="status-badge">📱 Android in Closed Testing</div>
         <h1>Simple Telugu Bible</h1>
-        <p class="tagline">A voice-navigated Bible app designed for elderly Telugu-speaking users. Simple, accessible, and thoughtful.</p>
+        <p class="tagline">A Bible app designed for elderly Telugu-speaking users. Simple, accessible, and thoughtful.</p>
 
         <div class="cta-section">
-            <p style="margin-bottom: 1.5rem; color: #666; font-size: 1.125rem;">
-                <strong>Android (Basic Version):</strong> Now in closed testing on Google Play Store<br>
-                <strong>iOS:</strong> Coming soon
-            </p>
             <form class="waitlist-form" action="https://formspree.io/f/xgvnledb" method="POST">
                 <input type="email" name="email" placeholder="Enter your email" required>
                 <button type="submit">Join Waitlist</button>
@@ -339,10 +481,31 @@
 
     <div class="screenshots">
         <h2>App Preview</h2>
-        <div class="screenshot-grid">
-            <img src="IMG_0300.PNG" alt="Reading settings with adjustable font size and line spacing">
-            <img src="IMG_0301.PNG" alt="Appearance settings with light, dark, and automatic themes">
-            <img src="Simulator Screenshot - iPhone 17 - 2025-10-03 at 12.30.30.PNG" alt="Voice navigation interface">
+        <div class="tab-container">
+            <input type="radio" id="ios-tab" name="platform" class="tab-input" checked>
+            <input type="radio" id="android-tab" name="platform" class="tab-input">
+            
+            <div class="tab-navigation">
+                <label for="ios-tab" class="tab-label">📱 iOS</label>
+                <label for="android-tab" class="tab-label">🤖 Android</label>
+            </div>
+            
+            <div class="tab-content" id="ios">
+                <div class="screenshot-grid">
+                    <img src="IMG_0300.PNG" alt="Reading settings with adjustable font size and line spacing">
+                    <img src="IMG_0301.PNG" alt="Appearance settings with light, dark, and automatic themes">
+                    <img src="Simulator Screenshot - iPhone 17 - 2025-10-03 at 12.30.30.PNG" alt="Voice navigation interface">
+                </div>
+            </div>
+            
+            <div class="tab-content" id="android">
+                <div class="screenshot-grid">
+                    <img src="1.png" alt="Android screenshot 1">
+                    <img src="2.png" alt="Android screenshot 2">
+                    <img src="3.png" alt="Android screenshot 3">
+                    <img src="4.png" alt="Android screenshot 4">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -367,5 +530,21 @@
         <p>Made in Visakhapatnam, Andhra Pradesh 🇮🇳</p>
         <p style="margin-top: 0.5rem;">Built with ❤️ for Telugu-speaking people everywhere</p>
     </footer>
+
+    <script>
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+
+            // Save preference to localStorage
+            const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+        }
+    </script>
 </body>
 </html>

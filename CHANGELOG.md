@@ -2,6 +2,18 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
+## [v0.0.2] - 2025-10-13
+
+### Changed
+- Updated settings icon from text icon (Tt) to standard settings cog icon
+- Improved UX based on closed testing feedback
+
+### Status
+- **Android**: Now in closed testing on Google Play Store
+- **iOS**: Coming soon
+
+---
+
 ## [v0.1.0] - 2025-10-03
 
 ### Added

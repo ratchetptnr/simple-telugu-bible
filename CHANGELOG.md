@@ -2,6 +2,45 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
+## [v0.0.4] - 2025-10-19
+
+### Changed
+- Renamed "AI Assistant" to "AI Chat" for better clarity
+- Implemented standard Android multi-select pattern for chat list
+  - Long-press any chat to enter selection mode
+  - Select multiple chats and delete them at once
+  - Visual feedback with checkboxes
+
+### Fixed
+- Fixed subtle layout jerk when entering selection mode
+- Improved accessibility with proper touch target sizing
+
+### Technical
+- Migrated to Material 3 ListItem component for better standards compliance
+- Follows Material Design patterns used in Gmail, Google Photos, and Files apps
+
+---
+
+## [v0.0.3] - 2025-10-17
+
+### Changed
+- Major Material 3 Expressive upgrade
+- Bible screen now features collapsing app bar that expands/collapses as you scroll
+- Smoother navigation animations between Bible and AI Chat tabs (crossfade instead of slide)
+- Updated all screens to match Material 3 design specifications
+
+### Fixed
+- Fixed status bar color to match app bar (edge-to-edge display)
+- Fixed app bar height issues across all screens
+- Improved color consistency throughout the app
+
+### Technical
+- Updated to Material 3 Expressive (Compose Material 3 1.4.0-alpha06)
+- Implemented LargeFlexibleTopAppBar for dynamic reading experience
+- Proper edge-to-edge implementation with window insets
+
+---
+
 ## [v0.0.2] - 2025-10-13
 
 ### Changed

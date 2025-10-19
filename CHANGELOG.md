@@ -2,7 +2,7 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
-## [v0.0.4] - 2025-10-19
+## [v0.0.5] - 2025-10-19
 
 ### Changed
 - Renamed "AI Assistant" to "AI Chat" for better clarity
@@ -21,7 +21,7 @@ All notable changes to Simple Telugu Bible will be documented here.
 
 ---
 
-## [v0.0.3] - 2025-10-17
+## [v0.0.4] - 2025-10-17
 
 ### Changed
 - Major Material 3 Expressive upgrade
@@ -41,7 +41,7 @@ All notable changes to Simple Telugu Bible will be documented here.
 
 ---
 
-## [v0.0.2] - 2025-10-13
+## [v0.0.3] - 2025-10-13
 
 ### Changed
 - Updated settings icon from text icon (Tt) to standard settings cog icon
@@ -53,7 +53,27 @@ All notable changes to Simple Telugu Bible will be documented here.
 
 ---
 
-## [v0.1.0] - 2025-10-03
+## [v0.0.2] - 2025-10-10
+
+### Changed
+- Play Store release preparation (Basic Version)
+- APK size optimized: 16MB → 4.5MB (72% reduction)
+- Removed all permissions for privacy-first approach
+- Clean version numbering
+
+### Fixed
+- Chapter changes now reset to verse 1
+- App saves and restores exact verse position on restart
+- Book changes reset to chapter 1, verse 1
+
+### Technical
+- R8/ProGuard minification and resource shrinking enabled
+- Created upload keystore for Google Play App Signing
+- Privacy policy added
+
+---
+
+## [v0.0.1] - 2025-10-03
 
 ### Added
 - Complete Telugu Bible text (USFM format)

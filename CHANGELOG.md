@@ -2,6 +2,18 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
+## [v0.0.6] - 2025-10-20
+
+### Fixed
+- Fixed AI Chat input bar height - removed excessive padding for cleaner appearance
+- Input field now properly aligns with system navigation bar (home gesture area)
+
+### Technical
+- Implemented proper window insets handling for nested Scaffolds
+- Follows Android edge-to-edge best practices
+
+---
+
 ## [v0.0.5] - 2025-10-19
 
 ### Changed

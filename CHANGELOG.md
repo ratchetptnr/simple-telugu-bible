@@ -5,12 +5,24 @@ All notable changes to Simple Telugu Bible will be documented here.
 ## [v0.0.6] - 2025-10-20
 
 ### Fixed
-- Fixed AI Chat input bar height - removed excessive padding for cleaner appearance
-- Input field now properly aligns with system navigation bar (home gesture area)
+- Fixed all padding and spacing issues throughout the app
+- AI Chat input bar now has proper height without excessive padding
+- Removed visible color seams between app bars and content in Settings, Book Selector, and About screens
+- All screens now have seamless, professional appearance matching Android system apps
+
+### Changed
+- Major architecture refactor following Google's "Now in Android" best practices
+- Migrated from 5+ nested Scaffolds to single top-level Scaffold pattern
+- Improved visual consistency across all secondary screens
 
 ### Technical
-- Implemented proper window insets handling for nested Scaffolds
-- Follows Android edge-to-edge best practices
+- **Breaking architectural change**: Removed all nested Scaffolds (NEVER nest Scaffolds!)
+- Implemented single Scaffold pattern with `contentWindowInsets = WindowInsets(0, 0, 0, 0)`
+- Moved all TopAppBars from `Scaffold.topBar` parameter to content area
+- Added proper `.consumeWindowInsets()` for correct inset consumption
+- Applied `surfaceContainer` background color to secondary destinations for Material 3 compliance
+- Each system inset now applied exactly once in component hierarchy
+- Performance improvements from fewer unnecessary compositions
 
 ---
 

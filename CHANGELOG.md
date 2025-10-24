@@ -2,6 +2,33 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
+## [v0.0.8] - 2025-10-24
+
+### Fixed
+- **AI Chat now responds in Telugu!** 🎉
+  - Fixed issue where AI was responding in English instead of Telugu
+  - Added Telugu language instruction to ensure proper responses
+  - Better understanding of Bible context in your current location
+
+- **Much more reliable AI Chat**
+  - Switched to stable, production-ready AI model (gemini-2.5-flash-lite)
+  - Automatic retry when AI service is busy (you won't see errors anymore)
+  - Fixed app crash when AI service returns errors
+  - Better error messages in Telugu when something goes wrong
+
+- **Better performance**
+  - Added timeout protection (won't hang forever if connection is slow)
+  - Faster error recovery
+  - More stable under poor network conditions
+
+### Technical
+- Backend deployed to Vercel with automatic updates
+- Retry logic: 2 automatic retries with smart backoff
+- HTTP timeout: 30 seconds max wait time
+- Error messages now in Telugu for better user experience
+
+---
+
 ## [v0.0.7] - 2025-10-24
 
 ### Released

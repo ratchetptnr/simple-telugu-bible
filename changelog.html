@@ -111,6 +111,42 @@
 
         <div class="changelog-entry">
             <div class="date">October 24, 2025</div>
+            <div class="version">v0.0.8 - AI Chat Reliability & Telugu Responses 🎉</div>
+
+            <h3>Fixed</h3>
+            <ul>
+                <li><strong>AI Chat now responds in Telugu!</strong> Fixed issue where AI was responding in English</li>
+                <li>Added Telugu language instruction to ensure proper responses</li>
+                <li>Better understanding of Bible context in your current location</li>
+            </ul>
+
+            <h3>Reliability Improvements</h3>
+            <ul>
+                <li>Switched to stable, production-ready AI model (gemini-2.5-flash-lite)</li>
+                <li>Automatic retry when AI service is busy - you won't see errors anymore!</li>
+                <li>Fixed app crash when AI service returns errors</li>
+                <li>Better error messages in Telugu when something goes wrong</li>
+            </ul>
+
+            <h3>Performance</h3>
+            <ul>
+                <li>Added timeout protection (won't hang forever if connection is slow)</li>
+                <li>Faster error recovery</li>
+                <li>More stable under poor network conditions</li>
+            </ul>
+
+            <h3>Technical</h3>
+            <ul>
+                <li>Backend deployed to Vercel with automatic updates</li>
+                <li>Retry logic: 2 automatic retries with exponential backoff (1s, 2s)</li>
+                <li>HTTP timeout: 30 seconds max wait time</li>
+                <li>Error messages now in Telugu for better UX</li>
+                <li>Model: gemini-2.5-flash-lite (stable, production-ready)</li>
+            </ul>
+        </div>
+
+        <div class="changelog-entry">
+            <div class="date">October 24, 2025</div>
             <div class="version">v0.0.7 - AI Chat Production Release 🎉</div>
 
             <h3>Released</h3>

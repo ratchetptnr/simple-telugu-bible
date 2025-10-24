@@ -2,6 +2,30 @@
 
 All notable changes to Simple Telugu Bible will be documented here.
 
+## [v0.0.7] - 2025-10-24
+
+### Released
+- **AI Chat Assistant now in production!** 🎉
+- Full version (0.0.3-full) available on Play Store with AI features
+
+### Added
+- AI Chat Assistant powered by Gemini
+- Multi-turn conversations about Bible verses, theology, and scripture
+- Persistent chat history (all your conversations saved locally)
+- Markdown-formatted AI responses
+- Chat list with multi-select delete
+- Message timestamps
+- Keyboard shortcuts (press Enter to send)
+- Smart auto-scrolling
+
+### Technical
+- APK size: 5.2 MB (signed, minified release build)
+- R8/ProGuard optimization enabled
+- Production keystore signing
+- Version code: 3
+
+---
+
 ## [v0.0.6] - 2025-10-20
 
 ### Fixed
